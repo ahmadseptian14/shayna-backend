@@ -33,8 +33,18 @@ Route::delete('/products/delete/{id}', 'ProductController@destroy')->name('produ
 Route::get('/products-galleries', 'ProductGalleryController@index')->name('products-galleries.index');
 Route::get('/products/create', 'ProductGalleryController@create')->name('products-galleries.create');
 Route::post('/products', 'ProductGalleryController@store')->name('products-galleries.store');
-// Route::get('/product/edit/{id}','ProductController@edit')->name('products.edit');
-// Route::put('/products/update/{id}', 'ProductController@update')->name('products.update');
 Route::delete('/products-galleries/delete/{id}', 'ProductGalleryController@destroy')->name('products-galleries.destroy');
+
+// Transactions
+Route::get('/transactions', 'TransactionController@index')->name('transactions.index');
+// Route::get('/transactions/create', 'TransactionController@create')->name('transactions.create');
+// Route::post('/transactions', 'TransactionController@store')->name('transactions.store');
+Route::get('transactions/{id}', 'TransactionController@show')->name('transactions.show');
+Route::get('/transactions/edit/{id}','TransactionController@edit')->name('transactions.edit');
+Route::put('/transactions/update/{id}', 'TransactionController@update')->name('transactions.update');
+Route::get('/transactions/{id}/set-status', 'TransactionController@setStatus')->name('transactions.status');
+Route::delete('/transactions/delete/{id}', 'TransactionController@destroy')->name('transactions.destroy');
+
+
 
 
